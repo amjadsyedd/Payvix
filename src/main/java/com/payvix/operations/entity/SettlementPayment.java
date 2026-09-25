@@ -19,7 +19,7 @@ public class SettlementPayment {
     //difference between @EmbeddedID, @Embedded and @Embeddable is that @EmbeddedId is used to represent a composite primary key in an entity, while @Embedded is used to include an embeddable class as a field within an entity. @Embeddable is used to mark a class as embeddable, indicating that its fields can be embedded in other entities.
     private SettlementPaymentId id;
 
-    //reason of writing MapsID() is to indicate that the settlement field in the SettlementPayment entity is mapped to the settlementId field in the embedded ID (SettlementPaymentId). This establishes a relationship between the SettlementPayment entity and the Settlement entity, allowing you to associate a settlement payment with a specific settlement. The @MapsId annotation ensures that the foreign key column in the SettlementPayment table corresponds to the primary key of the Settlement entity.
+    //reason of writing MapsID() is to indicate that the settlement field in the SettlementPayment entity is mapped to the settlementId field in the embedded ID (SettlementPaymentId). This establishes a relationship between the SettlementPayment entity and the Settlement entity, allowing to associate a settlement payment with a specific settlement. The @MapsId annotation ensures that the foreign key column in the SettlementPayment table corresponds to the primary key of the Settlement entity.
     @MapsId("settlementId")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "settlement_id", nullable = false)
